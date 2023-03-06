@@ -23,10 +23,14 @@ class HomeScreenProvider extends ChangeNotifier {
 
   bool generatingImageLoading = false;
 
-  generateImage() async {
+  generateImage(String prompt) async {
+    /// generate image from this api
     generatingImageLoading = true;
+    notifyListeners();
 
-    Map data = {'prompt': 'an armchair in the shape of an avocado'};
+    Map data = {
+      'prompt': prompt.toString(),
+    };
 
     var body = json.encode(data);
 
