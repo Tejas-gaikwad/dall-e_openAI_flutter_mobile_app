@@ -8,6 +8,7 @@ class HomeScreenProvider extends ChangeNotifier {
   List dalleData = [];
   var dalleImage;
   getAllGeneratedImages() async {
+    // Get all generated images......
     var res = await http.get(Uri.parse("${baseUrl}/api/v1/post"));
 
     var data = jsonDecode(res.body);
